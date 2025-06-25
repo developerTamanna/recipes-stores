@@ -1,0 +1,71 @@
+import React from 'react';
+
+const events = [
+  {
+    date: '15/09/2022',
+    category: 'FOOD, FLAVOUR',
+    description: 'Flavour so good you’ll try to eat with your eyes.',
+    image: 'https://i.postimg.cc/k2LTJ84X/220202-Crown-Melbourne-Restaurants-Silks4-1200px.jpg',
+  },
+  {
+    date: '08/09/2022',
+    category: 'HEALTHY FOOD',
+    description: 'Flavour so good you’ll try to eat with your eyes.',
+    image: 'https://i.postimg.cc/VSMDd6r9/pexels-photo-262978.jpg',
+  },
+  {
+    date: '03/09/2022',
+    category: 'RECIPIE',
+    description: 'Flavour so good you’ll try to eat with your eyes.',
+    image: 'https://i.postimg.cc/VJJ7P4zV/shutterstock-642632641.jpg',
+  },
+];
+
+const UpcomingEventSection = () => {
+  return (
+    <section className="bg-black text-white py-16 px-4">
+      <h2 className="text-4xl text-center font-serif mb-12">Upcoming Event</h2>
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {events.map((event, index) => (
+          <div
+            key={index}
+            className="relative group overflow-hidden rounded-md shadow-lg cursor-pointer"
+          >
+            {/* Background Image */}
+            <img
+              src={event.image}
+              alt="event"
+              className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+
+            {/* Date Tag */}
+            <div className="absolute top-4 left-4 bg-black px-3 py-1 text-sm font-semibold text-yellow-500 z-20">
+              {event.date}
+            </div>
+
+            {/* Sliding Overlay */}
+            <div className="absolute inset-0 z-10 overflow-hidden">
+              <div className="absolute -left-full top-0 w-full h-full bg-white opacity-20 skew-x-[-20deg] transition-all duration-700 group-hover:left-0" />
+            </div>
+
+            {/* Text Content */}
+            <div className="absolute bottom-6 left-6 right-6 text-center z-20">
+              <div className="text-sm tracking-widest text-yellow-500 mb-2">{event.category}</div>
+              <p className="text-lg font-light">{event.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Blog Button */}
+      <div className="text-center mt-12">
+        <button className="border border-yellow-500 text-yellow-500 px-6 py-2 hover:bg-yellow-500 hover:text-black transition-colors duration-300">
+          VIEW OUR BLOG
+        </button>
+      </div>
+    </section>
+  );
+};
+
+export default UpcomingEventSection;
