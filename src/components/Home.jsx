@@ -14,16 +14,16 @@ import Testimonial from './Testimonial';
 const Home = () => {
 
     useEffect(()=>{
-    
+
         document.title ="Recipe || Home"
       },[])
-    
-    
+
+
     return (
         <div>
             <Slider />
             <Banner />
-            
+
             <TopNotchMenu />
             <div>
                 <TopLikeCard></TopLikeCard>
@@ -50,5 +50,6 @@ const Home = () => {
         </div>
     );
 };
+
 
 export default Home;

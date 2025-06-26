@@ -7,7 +7,7 @@ const AllRecipe = () => {
 
   //dynamic path change
   useEffect(()=>{
-  
+
       document.title ="All Recipe"
     },[])
 

@@ -146,7 +146,7 @@ const MyRecipe = () => {
               text: 'Your recipe has been successfully updated.',
             }).then((result) => {
               if (result.isConfirmed) {
-                navigate('/myRecipe');
+                // navigate('/myRecipe');
               }
             });
           } else {
