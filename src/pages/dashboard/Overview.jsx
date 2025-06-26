@@ -1,9 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 
-const StatCard = ({ icon, label, value, bg }) => (
-  <div className={`p-6 rounded shadow text-lg ${bg}`}>
-    {icon} {label}: <span className="font-bold">{value}</span>
+const StatCard = ({ icon, label, value }) => (
+  <div className="bg-[#1a1a1a] text-[#c59d5f] p-6 rounded-lg shadow-md flex items-center justify-between">
+    <div className="text-3xl">{icon}</div>
+    <div className="text-right">
+      <h4 className="text-lg font-medium">{label}</h4>
+      <p className="text-2xl font-bold">{value}</p>
+    </div>
   </div>
 );
 
@@ -39,28 +43,18 @@ export default function Overview() {
     return () => ac.abort();
   }, [user?.email]);
 
-  if (loading) return <p>Loading overview…</p>;
-  if (error) return <p className="text-red-600">{error}</p>;
+  if (loading) return <p className="text-[#c59d5f]">Loading overview…</p>;
+  if (error) return <p className="text-red-500">{error}</p>;
 
   return (
-    <div>
-      <h2 className="text-xl font-semibold mb-4">
+    <div className="bg-black min-h-screen p-6 rounded-lg">
+      <h2 className="text-2xl font-bold mb-6 text-[#c59d5f]">
         Welcome, {user?.displayName || 'User'}!
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <StatCard
-          icon="🍲"
-          label="Total Recipes"
-          value={stats.total}
-          bg="bg-yellow-100"
-        />
-        <StatCard
-          icon="📝"
-          label="My Recipes"
-          value={stats.mine}
-          bg="bg-green-100"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <StatCard icon="🍲" label="Total Recipes" value={stats.total} />
+        <StatCard icon="📝" label="My Recipes" value={stats.mine} />
       </div>
     </div>
   );

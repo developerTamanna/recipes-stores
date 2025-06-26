@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "recipe-store-application"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }
