@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router';
 
 const events = [
   {
@@ -51,7 +52,9 @@ const UpcomingEventSection = () => {
 
             {/* Text Content */}
             <div className="absolute bottom-6 left-6 right-6 text-center z-20">
-              <div className="text-sm tracking-widest text-yellow-500 mb-2">{event.category}</div>
+              <div className="text-sm tracking-widest text-yellow-500 mb-2">
+                {event.category}
+              </div>
               <p className="text-lg font-light">{event.description}</p>
             </div>
           </div>
@@ -60,9 +63,11 @@ const UpcomingEventSection = () => {
 
       {/* Blog Button */}
       <div className="text-center mt-12">
-        <button className="border border-yellow-500 text-yellow-500 px-6 py-2 hover:bg-yellow-500 hover:text-black transition-colors duration-300">
-          VIEW OUR BLOG
-        </button>
+        <NavLink to="/blogs">
+          <button className="border border-yellow-500 text-yellow-500 px-6 py-2 hover:bg-yellow-500 hover:text-black transition-colors duration-300">
+            VIEW OUR BLOG
+          </button>
+        </NavLink>
       </div>
     </section>
   );

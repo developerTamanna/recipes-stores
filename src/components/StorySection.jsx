@@ -17,9 +17,9 @@ const StorySection = () => {
         </p>
         <p className="font-semibold mb-1">Book Through Call</p>
         <p className="text-yellow-500 text-xl mb-6">+80 (400) 123 4567</p>
-        <button className="border border-yellow-500 px-6 py-3 text-sm tracking-widest hover:bg-yellow-500 hover:text-black transition duration-300">
+        {/* <button className="border border-yellow-500 px-6 py-3 text-sm tracking-widest hover:bg-yellow-500 hover:text-black transition duration-300">
           READ MORE
-        </button>
+        </button> */}
       </div>
 
       {/* Right Side - Images */}

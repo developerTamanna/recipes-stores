@@ -24,6 +24,7 @@ import MyRecipe from './pages/MyRecipe.jsx';
 import DashboardLayout from './layouts/DashboardLayout.jsx';
 import Overview from './pages/dashboard/Overview.jsx';
 import AllRecipe from './pages/AllRecipe.jsx';
+import BlogSection from './pages/BlogSection.jsx';
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
           );
           return res.json();
         },
+      },
+      {
+        path: 'blogs',
+        Component: BlogSection,
       },
       {
         path: 'allRecipe',

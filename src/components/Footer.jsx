@@ -56,7 +56,7 @@ export default function Footer() {
                 />
               </div>
               <button
-                type="submit"
+                type="button"
                 className="bg-[#c59d5f] text-black px-5 text-sm font-semibold border-l border-gray-500 hover:bg-[#b48d55]"
               >
                 Subscribe

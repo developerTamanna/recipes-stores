@@ -3,7 +3,7 @@ import React from 'react';
 const ReservationSection = () => {
   return (
     <section className="bg-gradient-to-br from-[#0d0d0d] via-[#1a1a1a] to-[#000000] text-white py-16 px-4 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12 relative">
-      
+
       {/* Left - Reservation Form */}
       <div className="w-full">
         <h2 className="text-3xl md:text-4xl font-serif mb-3 text-[#c59d5f]">Online Reservation</h2>
@@ -51,7 +51,7 @@ const ReservationSection = () => {
             className="bg-[#111] border border-[#c59d5f] px-4 py-3 w-full placeholder-gray-300 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#c59d5f]"
           ></textarea>
 
-          <button className="w-full bg-[#c59d5f] hover:bg-[#b3864e] text-black font-semibold tracking-widest py-3 rounded-md transition">
+          <button type='button' className="w-full bg-[#c59d5f] hover:bg-[#b3864e] text-black font-semibold tracking-widest py-3 rounded-md transition">
             BOOK A TABLE
           </button>
         </form>

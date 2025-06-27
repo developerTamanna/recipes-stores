@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Fade, Slide, Zoom } from 'react-awesome-reveal'; // Animation import
+import { NavLink } from 'react-router';
 
 const slides = [
   {
@@ -61,13 +62,17 @@ const Slider = () => {
             </Zoom>
 
             <Slide direction="up" triggerOnce>
-              <p className="text-lg text-white mb-8">{slides[current].subtitle}</p>
+              <p className="text-lg text-white mb-8">
+                {slides[current].subtitle}
+              </p>
             </Slide>
 
             <Fade delay={300} triggerOnce>
-              <button className="px-6 py-2 border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition">
-                View Our Menu
-              </button>
+              <NavLink to="/allRecipe">
+                <button className="px-6 py-2 border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition">
+                  View Our Menu
+                </button>
+              </NavLink>
             </Fade>
           </div>
         </motion.div>
