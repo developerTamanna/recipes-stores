@@ -1,43 +1,49 @@
-import React from "react";
+// src/components/TopNotchMenu.jsx
+import React from 'react';
 
 const menuItems = [
   {
-    title: "Breakfast",
-    image: "https://i.postimg.cc/Kvf0syY3/galleon-cafe.jpg",
-    offset: "md:-translate-y-5",
+    title: 'Breakfast',
+    image: 'https://i.postimg.cc/Kvf0syY3/galleon-cafe.jpg',
+    offset: 'md:-translate-y-5',
   },
   {
-    title: "Appetizers",
-    image: "https://i.postimg.cc/9FQd0wWz/Hot-or-Cold-Crab-Appetizers.jpg",
-    offset: "md:translate-y-5",
+    title: 'Appetizers',
+    image: 'https://i.postimg.cc/9FQd0wWz/Hot-or-Cold-Crab-Appetizers.jpg',
+    offset: 'md:translate-y-5',
   },
   {
-    title: "Drinks",
-    image: "https://i.postimg.cc/tJYgQbjR/Ice-Milk-and-Lemon-Teas-Chilli-Cafe.jpg",
-    offset: "md:-translate-y-5",
+    title: 'Drinks',
+    image:
+      'https://i.postimg.cc/tJYgQbjR/Ice-Milk-and-Lemon-Teas-Chilli-Cafe.jpg',
+    offset: 'md:-translate-y-5',
   },
 ];
 
 export default function TopNotchMenu() {
   return (
-    <section className=" text-white py-20 px-4 text-center mt-16">
+    <section className="py-20 px-4 text-center mt-16 bg-white text-black dark:bg-black dark:text-white">
       {/* Section Title */}
       <div className="mb-14">
-        <p className="text-yellow-500 uppercase tracking-widest text-sm mb-2">
+        <p className="uppercase tracking-widest text-sm mb-2 text-blue-700 dark:text-[#c59d5f]">
           Flavors for Royalty
         </p>
-        <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-4 text-[#c59d5f]">
+        <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-4 text-blue-700 dark:text-[#c59d5f]">
           We Offer Top Notch
         </h2>
-        <p className="max-w-xl mx-auto text-gray-400 text-sm md:text-base">
-          Discover a world of culinary excellence with our handpicked selection of premium recipes — perfect for every occasion.
+        <p className="max-w-xl mx-auto text-gray-600 dark:text-gray-400 text-sm md:text-base">
+          Discover a world of culinary excellence with our hand‑picked selection
+          of premium recipes — perfect for every occasion.
         </p>
       </div>
 
       {/* Menu Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {menuItems.map((item, idx) => (
-          <div key={idx} className={`transform transition-transform duration-500 ${item.offset}`}>
+          <div
+            key={idx}
+            className={`transform transition-transform duration-500 ${item.offset}`}
+          >
             {/* Top pattern */}
             <div className="h-4 w-16 mx-auto mb-3 bg-[url('https://i.postimg.cc/Wp8MBTmV/Screenshot-2025-05-20-180858.png')] bg-cover" />
 
@@ -63,9 +69,11 @@ export default function TopNotchMenu() {
             {/* Bottom pattern */}
             <div className="h-4 w-16 mx-auto mt-3 bg-[url('https://i.postimg.cc/Wp8MBTmV/Screenshot-2025-05-20-180858.png')] bg-cover" />
 
-            {/* Title */}
-            <h3 className="mt-4 text-xl font-serif text-yellow-500">{item.title}</h3>
-            <p className="text-yellow-500 text-sm tracking-wider mt-1 cursor-pointer hover:underline">
+            {/* Title & CTA */}
+            <h3 className="mt-4 text-xl font-serif text-blue-700 dark:text-[#c59d5f]">
+              {item.title}
+            </h3>
+            <p className="text-blue-700 dark:text-[#c59d5f] text-sm tracking-wider mt-1 cursor-pointer hover:underline">
               VIEW MENU
             </p>
           </div>

@@ -1,5 +1,5 @@
 // src/components/Header.jsx
-import React, { useState, useContext, use } from 'react';
+import React, { useState, useContext } from 'react';
 import { NavLink } from 'react-router';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -11,7 +11,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const { user, logOut } = use(AuthContext)
+  const { user, logOut } = useContext(AuthContext);
 
   const handleLogout = async () => {
     try {
@@ -32,7 +32,7 @@ const Header = () => {
   };
 
   const activeClass =
-    'border-2 border-double border-[#c59d5f] px-2 rounded text-[#c59d5f]';
+    'border-2 border-double border-blue-700 dark:border-[#c59d5f] px-2 rounded text-blue-700 dark:text-[#c59d5f]';
 
   const commonLinks = [
     { path: '/', label: 'Home' },
@@ -40,7 +40,7 @@ const Header = () => {
   ];
 
   return (
-    <nav className="bg-black text-white">
+    <nav className="bg-white text-black dark:bg-black dark:text-white">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-2">
@@ -49,7 +49,10 @@ const Header = () => {
             src="https://i.postimg.cc/s2HMTNPY/logo.png"
             alt="logo"
           />
-          <NavLink to="/" className="text-xl font-bold text-[#c59d5f]">
+          <NavLink
+            to="/"
+            className="text-xl font-bold text-blue-700 dark:text-[#c59d5f]"
+          >
             Recipe Book
           </NavLink>
         </div>
@@ -61,7 +64,9 @@ const Header = () => {
               key={path}
               to={path}
               className={({ isActive }) =>
-                isActive ? activeClass : 'hover:text-[#c59d5f] px-2'
+                isActive
+                  ? activeClass
+                  : 'hover:text-blue-600 dark:hover:text-[#c59d5f] px-2'
               }
             >
               {label}
@@ -73,7 +78,9 @@ const Header = () => {
             <NavLink
               to="/dashboard"
               className={({ isActive }) =>
-                isActive ? activeClass : 'hover:text-[#c59d5f] px-2'
+                isActive
+                  ? activeClass
+                  : 'hover:text-blue-600 dark:hover:text-[#c59d5f] px-2'
               }
             >
               Dashboard
@@ -90,15 +97,15 @@ const Header = () => {
                 <img
                   src={user.photoURL}
                   alt="User"
-                  className="w-10 h-10 rounded-full border border-[#c59d5f]"
+                  className="w-10 h-10 rounded-full border border-blue-700 dark:border-[#c59d5f]"
                 />
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-1 text-sm bg-black text-[#c59d5f] rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-1 text-sm bg-white text-blue-700 dark:bg-black dark:text-[#c59d5f] rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10">
                   {user.displayName}
                 </div>
               </div>
               <button
                 onClick={handleLogout}
-                className="bg-[#c59d5f] text-black px-4 py-1 rounded hover:bg-[#b3864e] transition"
+                className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700 transition dark:bg-[#c59d5f] dark:text-black dark:hover:bg-[#d8b566]"
               >
                 Logout
               </button>
@@ -109,8 +116,8 @@ const Header = () => {
                 to="/login"
                 className={({ isActive }) =>
                   isActive
-                    ? 'block px-4 py-2 rounded bg-black text-white border-2 border-double border-[#c59d5f]'
-                    : 'block px-4 py-2 rounded bg-[#c59d5f] text-black hover:bg-[#b3864e]'
+                    ? 'block px-4 py-2 rounded bg-white text-blue-700 border-2 border-double border-blue-700 dark:bg-black dark:text-white dark:border-[#c59d5f]'
+                    : 'block px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 dark:bg-[#c59d5f] dark:text-black dark:hover:bg-[#d8b566]'
                 }
               >
                 Login
@@ -119,8 +126,8 @@ const Header = () => {
                 to="/register"
                 className={({ isActive }) =>
                   isActive
-                    ? 'block px-4 py-2 rounded bg-black text-white border-2 border-double border-[#c59d5f]'
-                    : 'block px-4 py-2 rounded bg-[#c59d5f] text-black hover:bg-[#b3864e]'
+                    ? 'block px-4 py-2 rounded bg-white text-blue-700 border-2 border-double border-blue-700 dark:bg-black dark:text-white dark:border-[#c59d5f]'
+                    : 'block px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 dark:bg-[#c59d5f] dark:text-black dark:hover:bg-[#d8b566]'
                 }
               >
                 Register
@@ -139,7 +146,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-3 bg-[#1a1a1a] text-white">
+        <div className="md:hidden px-4 pb-4 space-y-3 bg-[#f3f3f3] text-black dark:bg-[#1a1a1a] dark:text-white">
           <div className="flex justify-end">
             <ThemeToggle />
           </div>
@@ -152,7 +159,7 @@ const Header = () => {
               className={({ isActive }) =>
                 isActive
                   ? activeClass + ' block'
-                  : 'block hover:text-[#c59d5f] px-2'
+                  : 'block hover:text-blue-600 dark:hover:text-[#c59d5f] px-2'
               }
             >
               {label}
@@ -167,7 +174,7 @@ const Header = () => {
               className={({ isActive }) =>
                 isActive
                   ? activeClass + ' block'
-                  : 'block hover:text-[#c59d5f] px-2'
+                  : 'block hover:text-blue-600 dark:hover:text-[#c59d5f] px-2'
               }
             >
               Dashboard
@@ -180,9 +187,9 @@ const Header = () => {
                 <img
                   src={user.photoURL}
                   alt="User"
-                  className="w-8 h-8 rounded-full border border-[#c59d5f]"
+                  className="w-8 h-8 rounded-full border border-blue-700 dark:border-[#c59d5f]"
                 />
-                <span className="text-[#c59d5f] text-sm">
+                <span className="text-blue-700 dark:text-[#c59d5f] text-sm">
                   {user.displayName || 'No Name'}
                 </span>
               </div>
@@ -191,7 +198,7 @@ const Header = () => {
                   setIsOpen(false);
                   handleLogout();
                 }}
-                className="block w-full text-left px-4 py-2 rounded bg-[#c59d5f] text-black"
+                className="block w-full text-left px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 dark:bg-[#c59d5f] dark:text-black dark:hover:bg-[#d8b566]"
               >
                 Logout
               </button>
@@ -201,14 +208,14 @@ const Header = () => {
               <NavLink
                 onClick={() => setIsOpen(false)}
                 to="/login"
-                className="block px-4 py-2 rounded bg-[#c59d5f] text-black"
+                className="block px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 dark:bg-[#c59d5f] dark:text-black dark:hover:bg-[#d8b566]"
               >
                 Login
               </NavLink>
               <NavLink
                 onClick={() => setIsOpen(false)}
                 to="/register"
-                className="block px-4 py-2 rounded bg-[#c59d5f] text-black"
+                className="block px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 dark:bg-[#c59d5f] dark:text-black dark:hover:bg-[#d8b566]"
               >
                 Register
               </NavLink>

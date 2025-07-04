@@ -4,7 +4,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const Testimonial = () => {
   return (
-    <div className="bg-black text-white py-16 px-4 flex flex-col items-center text-center">
+    <div className="bg-white dark:bg-black text-gray-900 dark:text-white py-16 px-4 flex flex-col items-center text-center transition-colors duration-500">
       <div className="max-w-xl">
         {/* Awesome Reveal Animation */}
         <Fade direction="up" duration={800} triggerOnce>

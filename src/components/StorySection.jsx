@@ -1,25 +1,33 @@
+// src/components/StorySection.jsx
 import React from 'react';
 
 const StorySection = () => {
   return (
-    <section className=" text-yellow-500 py-16 px-4 md:px-20 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
+    <section className="text-blue-700 dark:text-[#c59d5f] py-16 px-4 md:px-20 flex flex-col md:flex-row items-center justify-between relative overflow-hidden bg-white dark:bg-black">
       {/* Left Side - Text */}
       <div className="md:w-1/2 z-10">
-        <p className="text-sm tracking-widest text-yellow-600 mb-2">OUR STORY</p>
-        <div className="h-[2px] w-12 bg-yellow-600 mb-6"></div>
+        <p className="text-sm tracking-widest text-blue-800 dark:text-[#c59d5f] mb-2">
+          OUR STORY
+        </p>
+        <div className="h-[2px] w-12 bg-blue-800 dark:bg-[#c59d5f] mb-6"></div>
         <h2 className="text-4xl md:text-5xl font-serif mb-6">
-          Every Flavor<br />Tells a Story
+          Every Flavor
+          <br />
+          Tells a Story
         </h2>
-        <p className="text-[#c59d5f] mb-6 leading-relaxed">
-          At our kitchen, food is not just prepared — it is curated with love, memory, and a touch of heritage. From sizzling street bites to soulful homestyle dishes, each recipe has a tale to tell. Whether it's the comfort of your mother's cooking or the thrill of a new taste, we bring together the best of both worlds — tradition and creativity. Sit back, take a bite, and let your taste buds explore a journey beyond the ordinary.
-
-
+        <p className="text-gray-700 dark:text-[#c59d5f] mb-6 leading-relaxed">
+          At our kitchen, food is not just prepared — it is curated with love,
+          memory, and a touch of heritage. From sizzling street bites to soulful
+          homestyle dishes, each recipe has a tale to tell. Whether it's the
+          comfort of your mother's cooking or the thrill of a new taste, we
+          bring together the best of both worlds — tradition and creativity. Sit
+          back, take a bite, and let your taste buds explore a journey beyond
+          the ordinary.
         </p>
         <p className="font-semibold mb-1">Book Through Call</p>
-        <p className="text-yellow-500 text-xl mb-6">+80 (400) 123 4567</p>
-        {/* <button className="border border-yellow-500 px-6 py-3 text-sm tracking-widest hover:bg-yellow-500 hover:text-black transition duration-300">
-          READ MORE
-        </button> */}
+        <p className="text-blue-700 dark:text-[#c59d5f] text-xl mb-6">
+          +80 (400) 123 4567
+        </p>
       </div>
 
       {/* Right Side - Images */}
@@ -43,14 +51,18 @@ const StorySection = () => {
       </div>
 
       {/* Optional Floating Circle Badge */}
-      <div className="absolute top-8 right-8 bg-black text-white border border-yellow-500 rounded-full w-28 h-28 flex flex-col items-center justify-center text-xs text-center leading-tight">
+      <div className="absolute top-8 right-8 bg-white dark:bg-black text-blue-700 dark:text-white border border-blue-700 dark:border-[#c59d5f] rounded-full w-28 h-28 flex flex-col items-center justify-center text-xs text-center leading-tight">
         <span className="text-[10px] tracking-widest">SINCE</span>
         <span className="text-xl font-bold">1950</span>
         <span className="mt-1 uppercase">Quality Food</span>
       </div>
 
       {/* Optional floating garlic/leaf decor */}
-      <img src="https://i.postimg.cc/xjtjfcxs/shape-3.png" alt="decor" className="absolute left-0 bottom-0 w-20" />
+      <img
+        src="https://i.postimg.cc/xjtjfcxs/shape-3.png"
+        alt="decor"
+        className="absolute left-0 bottom-0 w-20"
+      />
     </section>
   );
 };
