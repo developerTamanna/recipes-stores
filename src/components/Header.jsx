@@ -97,6 +97,7 @@ const Header = () => {
                 <img
                   src={user.photoURL}
                   alt="User"
+                  referrerPolicy='no-referrer'
                   className="w-10 h-10 rounded-full border border-blue-700 dark:border-[#c59d5f]"
                 />
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-1 text-sm bg-white text-blue-700 dark:bg-black dark:text-[#c59d5f] rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10">

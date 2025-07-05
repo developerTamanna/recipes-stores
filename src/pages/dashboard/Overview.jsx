@@ -1,8 +1,9 @@
+// src/pages/dashboard/Overview.jsx
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 
 const StatCard = ({ icon, label, value }) => (
-  <div className="bg-[#1a1a1a] text-[#c59d5f] p-6 rounded-lg shadow-md flex items-center justify-between">
+  <div className="bg-gray-100 dark:bg-[#1a1a1a] text-blue-800 dark:text-[#c59d5f] p-6 rounded-lg shadow-md flex items-center justify-between transition-colors duration-300">
     <div className="text-3xl">{icon}</div>
     <div className="text-right">
       <h4 className="text-lg font-medium">{label}</h4>
@@ -43,12 +44,15 @@ export default function Overview() {
     return () => ac.abort();
   }, [user?.email]);
 
-  if (loading) return <p className="text-[#c59d5f]">Loading overview…</p>;
+  if (loading)
+    return (
+      <p className="text-blue-800 dark:text-[#c59d5f]">Loading overview…</p>
+    );
   if (error) return <p className="text-red-500">{error}</p>;
 
   return (
-    <div className="bg-black min-h-screen p-6 rounded-lg">
-      <h2 className="text-2xl font-bold mb-6 text-[#c59d5f]">
+    <div className="bg-white dark:bg-black min-h-screen p-6 rounded-lg transition-colors duration-300">
+      <h2 className="text-2xl font-bold mb-6 text-blue-800 dark:text-[#c59d5f]">
         Welcome, {user?.displayName || 'User'}!
       </h2>
 

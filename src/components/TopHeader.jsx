@@ -1,8 +1,13 @@
-import { FaMapMarkerAlt, FaClock, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import {
+  FaMapMarkerAlt,
+  FaClock,
+  FaPhoneAlt,
+  FaEnvelope,
+} from 'react-icons/fa';
 
 const TopHeader = () => {
   return (
-    <div className="bg-black text-gray-200 text-sm py-2 px-4 border-b border-yellow-500 hidden md:flex">
+    <div className="bg-white dark:bg-black text-black dark:text-gray-200 text-sm py-2 px-4 border-b border-yellow-500 hidden md:flex transition-colors duration-300">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0">
         {/* Left Side Info */}
         <div className="flex flex-wrap items-center gap-4">

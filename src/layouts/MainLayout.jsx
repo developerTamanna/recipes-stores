@@ -7,7 +7,7 @@ import PageLoader from '../components/PageLoader';
 
 const MainLayout = () => {
     return (
-        <div className=' mx-auto'>
+        <div className=' mx-auto dark:bg-black bg-white'>
             <PageLoader/>
              <div className='fixed top-0 left-0 w-full z-50'>
                 <div>

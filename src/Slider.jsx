@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { Fade, Slide, Zoom } from 'react-awesome-reveal'; // Animation import
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { NavLink } from 'react-router';
 
 const slides = [
@@ -29,7 +29,8 @@ const Slider = () => {
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
-  const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  const prevSlide = () =>
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   useEffect(() => {
     const timer = setTimeout(() => nextSlide(), 7000);
